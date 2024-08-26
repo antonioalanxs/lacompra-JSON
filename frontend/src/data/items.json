@@ -1,0 +1,35 @@
+{
+  "Oils, Spices, and Sauces": [
+    "Olive oil",
+    "Black pepper",
+    "Garlic powder",
+    "Tomato sauce",
+    "Pesto"
+  ],
+  "Snacks": [
+    "Almonds",
+    "Popcorn",
+    "Potato chips",
+    "Pretzels",
+    "Chocolate bars",
+    "Granola bars",
+    "Trail mix",
+    "Cashews",
+    "Pistachios",
+    "Fruit snacks",
+    "Crackers",
+    "Cheese sticks",
+    "Rice cakes",
+    "Beef jerky",
+    "Dried fruit"
+  ],
+  "Cleaning Supplies": [
+    "Detergent",
+    "Disinfectant spray",
+    "Glass cleaner",
+    "Paper towels",
+    "Garbage bags"
+  ],
+  "Frozen Foods": ["Frozen pizza", "Ice cream", "Frozen vegetables"],
+  "Beverages": ["Water", "Orange juice", "Coffee", "Tea", "Soda"]
+}

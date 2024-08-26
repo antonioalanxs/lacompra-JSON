@@ -1,0 +1,19 @@
+form article:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+.download {
+  max-width: var(--breakpoint);
+
+  position: sticky;
+  bottom: 0;
+
+  margin-inline: auto;
+  padding-block: var(--pico-spacing);
+
+  background-color: var(--pico-background-color);
+
+  & button {
+    margin-bottom: 0 !important;
+  }
+}

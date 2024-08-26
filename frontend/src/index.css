@@ -1,0 +1,18 @@
+:root {
+  --breakpoint: 768px;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  text-wrap: pretty;
+}
+
+.container {
+  max-width: var(--breakpoint) !important;
+
+  margin-inline: auto;
+
+  padding-top: var(--pico-spacing) !important;
+  padding-inline: var(--pico-spacing) !important;
+}
