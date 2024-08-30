@@ -5,6 +5,10 @@ form article:last-of-type {
 .download {
   max-width: var(--breakpoint);
 
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--pico-spacing);
   position: sticky;
   bottom: 0;
 
@@ -15,5 +19,26 @@ form article:last-of-type {
 
   & button {
     margin-bottom: 0 !important;
+  }
+
+  & .whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    --pico-border-color: #25d366;
+  }
+  & .whatsapp-button:hover {
+    --pico-border-color: #1ebe57;
+  }
+
+  & .whatsapp-button:focus {
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+    background-color: #1ebe57;
+    --pico-border-color: #25d366;
+    outline: none; /* Remove default focus outline */
+    --pico-box-shadow: var(
+        --pico-button-hover-box-shadow,
+        0 0 0 rgba(0, 0, 0, 0)
+      ),
+      0 0 0 var(--pico-outline-width) #25d366;
   }
 }
