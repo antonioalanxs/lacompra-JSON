@@ -6,6 +6,9 @@ import { Downloader } from "@/utils/Downloader";
 import itemsData from "@/data/items.json";
 import "@/components/Main/Main.css";
 
+// `localStorage` key for saved items.
+const SELECTED_ITEMS = "selectedItems";
+
 /**
  * The main component. It contains the form with the items to generate the list.
  *
@@ -17,19 +20,19 @@ const Main = () => {
   const [items, setItems] = useState(itemsData);
   const [selectedItems, setSelectedItems] = useState([]);
 
-  // Load saved items from localStorage on component mount
   useEffect(() => {
-    const savedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+    const savedItems = JSON.parse(localStorage.getItem(SELECTED_ITEMS)) || [];
     setSelectedItems(savedItems);
   }, []);
 
   /**
-   * Handles item selection change and saves the updated selection to localStorage.
+   * Handles item selection change and saves the updated selection to `localStorage`.
    *
    * @param {Event} event The event object.
    */
   const handleItemChange = (event) => {
     const { name, checked } = event.target;
+    
     let updatedSelectedItems;
 
     if (checked) {
@@ -39,7 +42,7 @@ const Main = () => {
     }
 
     setSelectedItems(updatedSelectedItems);
-    localStorage.setItem("selectedItems", JSON.stringify(updatedSelectedItems));
+    localStorage.setItem(SELECTED_ITEMS, JSON.stringify(updatedSelectedItems));
   };
 
   /**
@@ -58,8 +61,7 @@ const Main = () => {
     if (selectedItems.length) {
       new Downloader().downloadTxt(selectedItems);
 
-      // Clear localStorage and reset state
-      localStorage.removeItem("selectedItems");
+      localStorage.removeItem(SELECTED_ITEMS);
       setSelectedItems([]);
     } else {
       alert("Please select at least one item.");
