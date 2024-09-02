@@ -5,6 +5,7 @@ import { useTitle } from "@/hooks/useTitle";
 import { Downloader } from "@/utils/Downloader";
 import itemsData from "@/data/items.json";
 import "@/components/Main/Main.css";
+import { generateWhatsAppLink } from "@/utils/WhatsAppLinkGenerator";
 
 // `localStorage` key for saved items.
 const SELECTED_ITEMS = "selectedItems";
@@ -32,7 +33,7 @@ const Main = () => {
    */
   const handleItemChange = (event) => {
     const { name, checked } = event.target;
-    
+
     let updatedSelectedItems;
 
     if (checked) {
@@ -70,6 +71,13 @@ const Main = () => {
     button.setAttribute("aria-busy", "false");
   };
 
+  const handleWhatsAppShare = () => {
+    const link = generateWhatsAppLink(selectedItems);
+    if (link) {
+      window.open(link, "_blank");
+    }
+  };
+
   return (
     <>
       <ColorSchemeSwitcher />
@@ -98,6 +106,13 @@ const Main = () => {
 
         <div className="download">
           <button type="submit">Download</button>
+          <button
+            type="button"
+            className="whatsAppButton"
+            onClick={handleWhatsAppShare}
+          >
+            Share via WhatsApp
+          </button>
         </div>
       </form>
     </>

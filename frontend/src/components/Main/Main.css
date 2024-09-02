@@ -5,6 +5,10 @@ form article:last-of-type {
 .download {
   max-width: var(--breakpoint);
 
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--pico-spacing);
   position: sticky;
   bottom: 0;
 
@@ -16,4 +20,7 @@ form article:last-of-type {
   & button {
     margin-bottom: 0 !important;
   }
+}
+.whatsAppButton {
+  background-color: var(--pico-primary) !important;
 }
