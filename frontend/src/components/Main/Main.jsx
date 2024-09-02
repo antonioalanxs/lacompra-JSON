@@ -108,7 +108,7 @@ const Main = () => {
           <button type="submit">Download</button>
           <button
             type="button"
-            className="whatsapp-button"
+            className="whatsAppButton"
             onClick={handleWhatsAppShare}
           >
             Share via WhatsApp
